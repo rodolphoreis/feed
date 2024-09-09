@@ -1,6 +1,6 @@
 .header {
-  background: #202024;
-  height: 100px;
+  background: var(--gray-800);
+  padding: 1.25rem 0;
   display: flex;
 }
 .logo {
@@ -10,10 +10,10 @@
   margin: auto;
 }
 .logoText {
-  color: white;
+  color: var(--gray-100);
   font-size: 30px;
 }
 .logoText2 {
-  color: #e69225;
+  color: var(--orange);
   font-size: 30px;
 }
