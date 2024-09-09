@@ -6,7 +6,6 @@
 .cover {
   width: 100%;
   height: 72px;
-  object-fit: cover;
 }
 .profile {
   display: flex;
@@ -14,6 +13,15 @@
   align-items: center;
   padding-top: 1rem;
   gap: 1rem;
+  margin-top: -2.7rem;
+}
+.profile img {
+  box-sizing: initial;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 3px solid var(--orange);
+  object-fit: cover;
 }
 .name {
   font-size: 22px;
@@ -42,6 +50,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: color 0.1s, background-color 0.1s;
 }
 .sidebar footer a:hover {
   background: var(--orange);
