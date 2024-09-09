@@ -1,0 +1,19 @@
+.header {
+  background: #202024;
+  height: 100px;
+  display: flex;
+}
+.logo {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+.logoText {
+  color: white;
+  font-size: 30px;
+}
+.logoText2 {
+  color: #e69225;
+  font-size: 30px;
+}
