@@ -8,3 +8,11 @@
   gap: 2rem;
   align-items: flex-start;
 }
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    display: block;
+    flex-wrap: wrap;
+    flex-direction: wrap;
+  }
+}
