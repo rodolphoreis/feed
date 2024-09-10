@@ -85,7 +85,18 @@
   line-height: 1.4;
   margin-top: 1rem;
 }
-.commentForm > button[type="submit"] {
+
+.commentForm footer {
+  visibility: hidden;
+  max-height: 0;
+}
+.commentForm:focus-within footer {
+  visibility: visible;
+  max-height: none;
+  transition: max-height 0.2s ease-out;
+}
+
+.commentForm footer button[type="submit"] {
   background: var(--orange);
   color: var(--gray-800);
   border: 0;
@@ -96,9 +107,15 @@
   margin-top: 1rem;
   transition: background-color 0.1s;
 }
-.commentForm > button[type="submit"]:hover {
+.commentForm footer button[type="submit"]:focus {
+  background-color: var(--orange);
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+.commentForm footer button[type="submit"]:hover {
   background: rgb(252, 177, 37);
 }
+
 @media screen and (max-width: 768px) {
   .post {
     margin-top: 1.5rem;
@@ -135,7 +152,7 @@
     font-size: 0.75rem;
     padding: 0.7rem;
   }
-  .commentForm > button[type="submit"] {
+  .commentForm footer button[type="submit"] {
     padding: 0.6rem 0.75rem;
     font-size: 0.8rem;
   }
