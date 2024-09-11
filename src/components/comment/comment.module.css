@@ -1,0 +1,74 @@
+.comment {
+  background: var(--gray-800);
+  display: flex;
+  padding: 2.5rem;
+  border-radius: 8px;
+  flex: 1;
+}
+.author {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.authorInfoContainer {
+  background: var(--gray-600);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  padding: 1rem;
+  border-radius: 8px;
+}
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  margin-right: 0.5rem;
+}
+.authorInfo strong {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--gray-100);
+}
+.time {
+  color: var(--gray-400);
+  font-size: 0.7rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+.authorInfo span {
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: var(--gray-400);
+}
+button {
+  display: flex;
+  align-items: flex-start;
+  background-color: transparent;
+  border: none;
+}
+.icon {
+  font-size: 0.875rem;
+  color: var(--gray-100);
+}
+button {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+button span {
+  font-size: 0.875rem;
+  color: var(--gray-100);
+}
+
+@media screen and (max-width: 768px) {
+  .comment {
+    padding: 1rem;
+  }
+}
