@@ -1,7 +1,7 @@
 .comment {
   background: var(--gray-800);
   display: flex;
-  padding: 2.5rem;
+  margin-top: 1rem;
   border-radius: 8px;
   flex: 1;
 }
