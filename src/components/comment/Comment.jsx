@@ -23,11 +23,11 @@ export function Comment() {
               <span>Muito bom Dev, parabéns!! 👏👏</span>
             </div>
 
-            <button title="Deletar comentário">
+            <button title="Deletar comentário" className={styles.buttonDelete}>
               <FaTrash className={styles.icon} />
             </button>
           </div>
-          <button>
+          <button className={styles.buttonThumbsUp}>
             <FaThumbsUp className={styles.icon} />
             <span>Aplaudir • 03</span>
           </button>
