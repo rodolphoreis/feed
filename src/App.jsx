@@ -1,5 +1,11 @@
 import { Header } from "./components/header/Header";
-import "./styles/styles.css";
+import { Sidebar } from "./components/sidebar/Sidebar";
+
+import "./styles/globals.css";
+import styles from "./app.module.css";
+import { Post } from "./components/post/Post";
+import { Comment } from "./components/comment/Comment";
+
 export function App() {
   const posts = [
     {
@@ -55,6 +61,34 @@ export function App() {
   return (
     <>
       <Header />
+      <div className={styles.wrapper}>
+        <Sidebar />
+
+        <main
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+          }}
+        >
+          <section>
+            {posts &&
+              posts.map((post) => (
+                <Post
+                  key={post.id}
+                  author={post.author}
+                  content={post.content}
+                  publishedAt={post.publishedAt}
+                />
+              ))}
+          </section>
+          <section>
+            <Comment />
+            <Comment />
+            <Comment />
+          </section>
+        </main>
+      </div>
     </>
   );
 }
