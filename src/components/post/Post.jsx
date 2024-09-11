@@ -1,5 +1,21 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import styles from "./post.module.css";
-export function Post() {
+import { format, formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale/pt-BR";
+export function Post({ author, content, publishedAt }) {
+  const formattedDate = format(
+    publishedAt,
+    "d 'de' MMMM 'de' yyyy 'às' HH:mm'h'",
+    {
+      locale: ptBR,
+    }
+  );
+  const formattedTimeAgo = formatDistanceToNow(publishedAt, {
+    locale: ptBR,
+    addSuffix: true,
+  });
+
   return (
     <article className={styles.post}>
       <header className={styles.header}>
