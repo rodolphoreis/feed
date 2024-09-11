@@ -5,6 +5,9 @@
   border-radius: 8px;
   flex: 1;
 }
+.comment + .comment {
+  margin-top: 0.5rem;
+}
 .author {
   display: flex;
   width: 100%;
@@ -47,22 +50,55 @@
   font-weight: normal;
   color: var(--gray-400);
 }
-button {
+.buttonDelete {
   display: flex;
   align-items: flex-start;
   background-color: transparent;
-  border: none;
+  border: transparent !important;
+  outline: none !important;
+  box-shadow: none;
 }
+.buttonDelete:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.buttonDelete:active {
+  background-color: transparent;
+}
+
 .icon {
   font-size: 0.875rem;
   color: var(--gray-100);
+  cursor: pointer;
+  transition: color 0.2s;
 }
-button {
+.icon:hover {
+  color: var(--orange);
+}
+
+.buttonThumbsUp {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+  background-color: transparent;
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  background-color: transparent;
+  border: transparent !important;
+  outline: none !important;
+  box-shadow: none;
 }
-button span {
+.buttonThumbsUp:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.buttonThumbsUp:active {
+  background-color: transparent;
+}
+
+.button span {
   font-size: 0.875rem;
   color: var(--gray-100);
 }
