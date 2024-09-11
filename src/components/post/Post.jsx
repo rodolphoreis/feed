@@ -20,39 +20,39 @@ export function Post({ author, content, publishedAt }) {
     <article className={styles.post}>
       <header className={styles.header}>
         <div className={styles.author}>
-          <img
-            className={styles.avatar}
-            src="https://avatars.githubusercontent.com/u/135350341?v=4&size=64"
-          />
+          <img className={styles.avatar} src={author.avatar} />
           <div className={styles.authorInfo}>
-            <strong>Rodolpho Reis</strong>
-            <span>Web Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.job}</span>
           </div>
         </div>
         <time
           className={styles.time}
-          title="09 de setembro às 20:34"
-          dateTime="2024-09-09 20:33:20"
+          title={formattedDate}
+          dateTime={publishedAt.toISOString()}
         >
-          Publicado há 1h
+          {formattedTimeAgo}
         </time>
       </header>
       <div className={styles.content}>
-        <p>Fala galera 👋</p>
-
-        <p>
-          Acabei de subir mais um projeto no meu portfólio. É um projeto
-          simples, para eu treinar meu css. O nome do projeto é DoctorCare 🚀
-        </p>
-
-        <p>
-          <a href="#">reis.design/doctorcare</a>
-        </p>
-
-        <p>
-          <a href="#">#novoprojeto</a> <a href="#"> #devReis </a>{" "}
-          <a href="#">#reis</a>{" "}
-        </p>
+        {content.map((item, i) => {
+          if (item.type === "paragraph") {
+            return <p key={i}>{item.content}</p>;
+          } else if (item.type === "link") {
+            return (
+              <p key={i}>
+                <a
+                  href={item.content}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.content}
+                </a>
+              </p>
+            );
+          }
+          return null;
+        })}
       </div>
       <form className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
