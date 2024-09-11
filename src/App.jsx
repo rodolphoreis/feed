@@ -4,7 +4,6 @@ import { Sidebar } from "./components/sidebar/Sidebar";
 import "./styles/globals.css";
 import styles from "./app.module.css";
 import { Post } from "./components/post/Post";
-import { Comment } from "./components/comment/Comment";
 
 export function App() {
   const posts = [
@@ -81,11 +80,6 @@ export function App() {
                   publishedAt={post.publishedAt}
                 />
               ))}
-          </section>
-          <section>
-            <Comment />
-            <Comment />
-            <Comment />
           </section>
         </main>
       </div>
