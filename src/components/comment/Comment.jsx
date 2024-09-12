@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { FaThumbsUp, FaTrash } from "react-icons/fa";
 import styles from "./comment.module.css";
 
-export function Comment() {
+export function Comment({ content }) {
   return (
     <>
       <div className={styles.comment}>
@@ -18,9 +19,9 @@ export function Comment() {
                 title="09 de setembro às 20:34"
                 dateTime="2024-09-09 20:33:20"
               >
-                Cerca de 2h
+                há 2 dias
               </time>
-              <span>Muito bom Dev, parabéns!! 👏👏</span>
+              <span>{content}</span>
             </div>
 
             <button title="Deletar comentário" className={styles.buttonDelete}>
