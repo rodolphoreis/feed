@@ -8,7 +8,6 @@ export function Comment({ content }) {
 
   function handleLike() {
     setCounter(counter + 1);
-    console.log(counter);
   }
   return (
     <>
