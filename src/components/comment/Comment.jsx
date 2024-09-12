@@ -36,8 +36,8 @@ export function Comment({ content }) {
             </button>
           </div>
           <button className={styles.buttonThumbsUp}>
-            <FaThumbsUp className={styles.icon} />
-            <span>Aplaudir • 03</span>
+            <FaThumbsUp className={styles.icon} onClick={handleLike} />
+            <span>Aplaudir • {counter ? counter : null}</span>
           </button>
         </div>
       </div>
