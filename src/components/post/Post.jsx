@@ -3,6 +3,8 @@
 import styles from "./post.module.css";
 import { format, formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale/pt-BR";
+import { Comment } from "../comment/Comment";
+import { useState } from "react";
 export function Post({ author, content, publishedAt }) {
   const [comments, setComments] = useState(["Muito bom Rodolpho, parabéns!"]);
   const [newComment, setNewComment] = useState("");
