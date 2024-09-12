@@ -8,6 +8,7 @@ import { useState } from "react";
 export function Post({ author, content, publishedAt }) {
   const [comments, setComments] = useState(["Muito bom Rodolpho, parabéns!"]);
   const [newComment, setNewComment] = useState("");
+
   const formattedDate = format(
     publishedAt,
     "d 'de' MMMM 'de' yyyy 'às' HH:mm'h'",
@@ -70,7 +71,7 @@ export function Post({ author, content, publishedAt }) {
           return null;
         })}
       </div>
-      <form className={styles.commentForm}>
+      <form className={styles.commentForm} onSubmit={handleSubmit}>
         <strong>Deixe seu feedback</strong>
         <textarea
           value={newComment}
@@ -82,6 +83,9 @@ export function Post({ author, content, publishedAt }) {
           <button type="submit">Publicar</button>
         </footer>
       </form>
+      {comments.map((comment, i) => {
+        return <Comment key={i} content={comment} />;
+      })}
     </article>
   );
 }
