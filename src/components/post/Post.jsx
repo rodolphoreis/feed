@@ -16,6 +16,18 @@ export function Post({ author, content, publishedAt }) {
     addSuffix: true,
   });
 
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    if (!newComment) {
+      return;
+    }
+
+    setComments([...comments, newComment]);
+
+    setNewComment("");
+  }
+
   return (
     <article className={styles.post}>
       <header className={styles.header}>
