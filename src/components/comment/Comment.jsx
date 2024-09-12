@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { FaThumbsUp, FaTrash } from "react-icons/fa";
 import styles from "./comment.module.css";
+import { useState } from "react";
 
 export function Comment({ content }) {
   return (
