@@ -4,6 +4,10 @@ import styles from "./comment.module.css";
 import { useState } from "react";
 
 export function Comment({ content }) {
+  function handleLike() {
+    setCounter(counter + 1);
+    console.log(counter);
+  }
   return (
     <>
       <div className={styles.comment}>
