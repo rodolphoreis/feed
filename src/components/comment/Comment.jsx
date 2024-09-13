@@ -3,11 +3,14 @@ import { FaThumbsUp, FaTrash } from "react-icons/fa";
 import styles from "./comment.module.css";
 import { useState } from "react";
 
-export function Comment({ content }) {
+export function Comment({ content, handleDeleteComment }) {
   const [counter, setCounter] = useState(0);
 
   function handleLike() {
     setCounter(counter + 1);
+  }
+  function handleDelete() {
+    handleDeleteComment(content);
   }
   return (
     <>
@@ -30,7 +33,11 @@ export function Comment({ content }) {
               <span>{content}</span>
             </div>
 
-            <button title="Deletar comentário" className={styles.buttonDelete}>
+            <button
+              onClick={handleDelete}
+              title="Deletar comentário"
+              className={styles.buttonDelete}
+            >
               <FaTrash className={styles.icon} />
             </button>
           </div>
