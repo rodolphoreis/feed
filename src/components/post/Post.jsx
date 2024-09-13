@@ -91,7 +91,12 @@ export function Post({ author, content, publishedAt }) {
         </footer>
       </form>
       {comments.map((comment, i) => {
-        return <Comment key={i} content={comment} />;
+        return (
+          <Comment
+            key={i}
+            content={comment}
+            handleDeleteComment={handleDeleteComment}
+          />
       })}
     </article>
   );
