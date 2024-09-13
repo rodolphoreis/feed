@@ -7,7 +7,9 @@ export function Comment({ content, handleDeleteComment }) {
   const [counter, setCounter] = useState(0);
 
   function handleLike() {
-    setCounter(counter + 1);
+    setCounter((state) => {
+      return state + 1;
+    });
   }
   function handleDelete() {
     handleDeleteComment(content);
