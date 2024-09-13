@@ -33,6 +33,10 @@ export function Post({ author, content, publishedAt }) {
     setNewComment("");
   }
 
+  function handleNewCommentChange(event) {
+    setNewComment(event.target.value);
+  }
+
   function handleDeleteComment(commentToDelete) {
     setComments(comments.filter((comment) => comment !== commentToDelete));
   }
@@ -87,6 +91,7 @@ export function Post({ author, content, publishedAt }) {
           name="comment"
           required
           onInvalid={handleInvalidComment}
+          onChange={handleNewCommentChange}
           placeholder="Deixe um comentário"
         />
         <footer>
