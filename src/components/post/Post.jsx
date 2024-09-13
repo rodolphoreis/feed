@@ -33,6 +33,10 @@ export function Post({ author, content, publishedAt }) {
     setNewComment("");
   }
 
+  function handleDeleteComment(commentToDelete) {
+    setComments(comments.filter((comment) => comment !== commentToDelete));
+  }
+
   return (
     <article className={styles.post}>
       <header className={styles.header}>
