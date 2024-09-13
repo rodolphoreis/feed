@@ -112,8 +112,12 @@
   outline: 2px solid var(--orange);
   outline-offset: 2px;
 }
-.commentForm footer button[type="submit"]:hover {
+.commentForm footer button[type="submit"]:not(:disabled):hover {
   background: rgb(252, 177, 37);
+}
+.commentForm footer button[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
 }
 
 @media screen and (max-width: 768px) {
