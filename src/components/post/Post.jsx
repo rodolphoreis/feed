@@ -37,6 +37,7 @@ export function Post({ author, content, publishedAt }) {
     setComments(comments.filter((comment) => comment !== commentToDelete));
   }
 
+  const noCommentMessage = newComment.length === 0;
   return (
     <article className={styles.post}>
       <header className={styles.header}>
@@ -84,7 +85,9 @@ export function Post({ author, content, publishedAt }) {
           placeholder="Deixe um comentário"
         />
         <footer>
-          <button type="submit">Publicar</button>
+          <button type="submit" disabled={noCommentMessage}>
+            Publicar
+          </button>
         </footer>
       </form>
       {comments.map((comment, i) => {
