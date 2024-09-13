@@ -107,6 +107,7 @@ export function Post({ author, content, publishedAt }) {
             content={comment}
             handleDeleteComment={handleDeleteComment}
           />
+        );
       })}
     </article>
   );
