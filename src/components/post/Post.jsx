@@ -37,6 +37,10 @@ export function Post({ author, content, publishedAt }) {
     setComments(comments.filter((comment) => comment !== commentToDelete));
   }
 
+  function handleInvalidComment() {
+    alert("O comentário não pode estar vazio.");
+  }
+
   const noCommentMessage = newComment.length === 0;
   return (
     <article className={styles.post}>
@@ -81,7 +85,8 @@ export function Post({ author, content, publishedAt }) {
         <textarea
           value={newComment}
           name="comment"
-          onChange={(e) => setNewComment(e.target.value)}
+          required
+          onInvalid={handleInvalidComment}
           placeholder="Deixe um comentário"
         />
         <footer>
